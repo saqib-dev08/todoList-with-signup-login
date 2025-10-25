@@ -9,7 +9,8 @@
 <body>
     
 <div class="main-div">
-    <form class="login-content" onsubmit="submitbtn(event);">
+
+    <form id="signup-content" onsubmit="submitbtn(event);" >
     <h3 id="signup">SignUp</h3>
     <div id="name">
         Name:
@@ -21,14 +22,29 @@
     </div>
     <div id="cnic">
         CNIC:
-        <input type="text" class="inputs" id="user-cnic">
+        <input type="number" class="inputs" id="user-cnic">
     </div>
     <div id="pass">
-        Password:
+       Create password:
         <input type="password" class="inputs" id="user-pass">
     </div>
-    <input type="submit" id="signUpbtn" value="Sign Up">
-<p><a href="#" id="loginLink" onclick="loginPage();">Already have an account? Login</a></p>
+    <input type="submit" class="Btn" id="signUpbtn" value="Sign Up">
+<p><a href="#" id="loginLink" onclick="pageToggle();">Already have an account? Login</a></p>
+    </form>
+
+    <form id="login-content" onsubmit="loginBtn();">
+        <h3 id="login">Login</h3>
+   <div id="login-cnic-div">
+        CNIC:
+        <input type="text" class="inputs" id="login-cnic">
+    </div>
+    <div id="login-pass-div">
+        Password:
+        <input type="password" class="inputs" id="login-pass">
+    </div>
+    <input type="submit"  class="Btn" id="LoginBtn" value="Login">
+<p><a href="#" id="signUpLink" onclick="pageToggle();">Don't have an account? SignUp</a></p>
+
     </form>
 </div>
 

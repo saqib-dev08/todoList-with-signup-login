@@ -18,22 +18,30 @@ var passError = document.createElement("p");
 passError.textContent = "Password is required!"
 passdiv.appendChild(passError);
 
+
+
 const userName = document.getElementById("user-name");
-/*var userName1 = userName.value.trim();*/
+
 const dob = document.getElementById("user-dob");
+
 const cnic = document.getElementById("user-cnic");
-/*var userCnic = cnic.value.trim();*/
+
 const password = document.getElementById("user-pass");
-/*var userPassword = password.value.trim();*/
+
 
 const paras = document.getElementsByTagName("p");
+console.log(paras)
 
 
+var loginPage = document.getElementById("login-content");
+var signupPage = document.getElementById("signup-content");
 
 
 function submitbtn(event) {
     event.preventDefault();
-    
+
+    console.log(userName.value.trim());
+
     if (userName.value === "") {
         paras[0].style.display = "block";
     }
@@ -46,7 +54,7 @@ function submitbtn(event) {
         }
     });
 
-    
+
     if (dob.value === "") {
         paras[1].style.display = "block";
     }
@@ -62,7 +70,7 @@ function submitbtn(event) {
     if (cnic.value.length < 13 && cnic.value.length > 0) {
         paras[2].textContent = "Please enter exactly 13 numbers!";
         paras[2].style.display = "block";
-        
+
     }
     else if (cnic.value.length > 13) {
         paras[2].textContent = "Please enter exactly 13 numbers!";
@@ -92,6 +100,7 @@ function submitbtn(event) {
         }
     });
 
+
     if (password.value === "") {
         paras[3].style.display = "block";
     } else if (password.value.length < 6) {
@@ -111,22 +120,116 @@ function submitbtn(event) {
         }
 
     });
+
+
+
+
+    var array = [];
     
+    if (userName.value === "") {
+        return;
+    } else if (dob.value === "") {
+        return;
+    } else if ((cnic.length < 13 && cnic.length > 0) || cnic.length > 13 || cnic.value === "") {
+        return;
+    } else if (password.value === "" || (password.length < 6 && password.length > 0)) {
+        return;
+    } else {
+        
+        const users = { "Name": userName.value.trim(), "Date Of Birth": dob.value.trim(), "CNIC": cnic.value.trim(), "Password": password.value.trim() };
+        array.push(users);
+        localStorage.setItem("Users", JSON.stringify(array));
+
+        alert("You have successfully registered!");
+        loginPage.style.display = "block";
+        signupPage.style.display = "none";
+
+    }
+
+
+
 };
 
+var logincnic = document.getElementById("login-cnic-div");
+var loginCnicError = document.createElement("p");
+loginCnicError.textContent = "CNIC is required!"
+logincnic.appendChild(loginCnicError);
 
+var loginpass = document.getElementById("login-pass-div");
+var loginPassError = document.createElement("p");
+loginPassError.textContent = "Password is required!"
+loginpass.appendChild(loginPassError);
 
-function loginPage(){
-var p = document.getElementById("loginLink");
-p.style.display = "none";
+var loginCnicInp = document.getElementById("login-cnic");
+var loginPassInp = document.getElementById("login-pass");
 
-    var login = document.getElementById("signup");
-    login.textContent = "Login";
+function loginBtn() {
 
-    dobdiv.remove();
-    paras[1].remove();
+    if (loginCnicInp.value.length < 13 && loginCnicInp.value.length > 0) {
+        paras[5].style.display = "block";
+        paras[5].textContent = "Please enter exactly 13 numbers!";
 
-    var btn = document.getElementById("signUpbtn");
-btn.value = "Login";
+    }
+    else if (loginCnicInp.value.length > 13) {
+        paras[5].textContent = "Please enter exactly 13 numbers!";
+        paras[5].style.display = "block";
+    } else if (loginCnicInp.value === "") {
+        paras[5].style.display = "block";
+    }
+    else {
+        paras[5].style.display = "none";
+    }
+
+    loginCnicInp.addEventListener('input', function () {
+
+        if (loginCnicInp.value.length < 13 && loginCnicInp.value.length > 0) {
+            paras[5].textContent = "Please enter exactly 13 numbers!";
+            paras[5].style.display = "block";
+        }
+        else if (loginCnicInp.value.length > 13) {
+            paras[5].textContent = "Please enter exactly 13 numbers!";
+            paras[5].style.display = "block";
+        }
+        else if (loginCnicInp.value === "") {
+            paras[5].style.display = "block";
+        }
+        else {
+            paras[5].style.display = "none";
+        }
+    });
+
+    if (loginPassInp.value === "") {
+        paras[6].style.display = "block";
+    } else if (loginPassInp.value.length < 6) {
+        paras[6].style.display = "block";
+        paras[6].textContent = "Password must be atleast 6 characters!";
+    }
+    loginPassInp.addEventListener('input', function () {
+
+        if (loginPassInp.value === "") {
+            paras[6].style.display = "block";
+        }
+        else if (loginPassInp.value.length < 6 && loginPassInp.value.length > 0) {
+            paras[6].style.display = "block";
+            paras[6].textContent = "Password must be atleast 6 characters!";
+        } else {
+            paras[6].style.display = "none";
+        }
+
+    });
 
 }
+
+
+function pageToggle() {
+
+    if (loginPage.style.display === "none") {
+        loginPage.style.display = "block";
+        signupPage.style.display = "none";
+    } else {
+        loginPage.style.display = "none";
+        signupPage.style.display = "block";
+    }
+
+};
+

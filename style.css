@@ -48,7 +48,7 @@ h3{
 h3:hover{
     cursor: pointer;
 }
-#signUpbtn{
+.Btn{
     width: 100%;
     margin-top: 20px;
     padding: 9px;
@@ -58,7 +58,7 @@ color: white;
 font-size: 15px;
 background-color: rgb(28, 93, 186);
 }
-#signUpbtn:hover{
+.Btn:hover{
     cursor: pointer;
 background-color: rgb(32, 105, 207);
 
@@ -69,20 +69,33 @@ background-color: rgba(255, 255, 255, 0.46);
 outline: none;
 
 }
-.login-content>p{
+#signup-content>p{
+     text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+}
+#signup-content>p>a{
+    color: rgb(202, 202, 202);
+}
+#login-content>p{
     text-align: center;
     font-size: 14px;
     margin-top: 10px;
     display: block;
 }
-.login-content>p>a{
-    color: rgb(202, 202, 202);
+#login-content>p>a{
+     color: rgb(202, 202, 202);
 }
+
 p{
     margin-bottom: 5px;
     transform: translateY(-3px);
     text-align: center;
     display: none;
     color: #ff3535;
+}
+#login-content{
+    display: none;
 }
 
