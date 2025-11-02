@@ -1,30 +1,17 @@
 var namediv = document.getElementById("name");
-var nameError = document.createElement("p");
-nameError.textContent = "Name is required!"
-namediv.appendChild(nameError);
 
 var dobdiv = document.getElementById("dob");
-var dobError = document.createElement("p");
-dobError.textContent = "Date of birth is required!"
-dobdiv.appendChild(dobError);
 
-var cnicdiv = document.getElementById("cnic");
-var cnicError = document.createElement("p");
-cnicError.textContent = "CNIC is required!"
-cnicdiv.appendChild(cnicError);
+var emaildiv = document.getElementById("email");
 
 var passdiv = document.getElementById("pass");
-var passError = document.createElement("p");
-passError.textContent = "Password is required!"
-passdiv.appendChild(passError);
-
 
 
 const userName = document.getElementById("user-name");
 
 const dob = document.getElementById("user-dob");
 
-const cnic = document.getElementById("user-cnic");
+const email = document.getElementById("user-email");
 
 const password = document.getElementById("user-pass");
 
@@ -67,32 +54,17 @@ function submitbtn(event) {
         }
     });
 
-    if (cnic.value.length < 13 && cnic.value.length > 0) {
-        paras[2].textContent = "Please enter exactly 13 numbers!";
-        paras[2].style.display = "block";
 
-    }
-    else if (cnic.value.length > 13) {
-        paras[2].textContent = "Please enter exactly 13 numbers!";
-        paras[2].style.display = "block";
-    } else if (cnic.value === "") {
+    if (email.value === "") {
         paras[2].style.display = "block";
     }
     else {
         paras[2].style.display = "none";
     }
 
-    cnic.addEventListener('input', function () {
+    email.addEventListener('input', function () {
 
-        if (cnic.value.length < 13 && cnic.value.length > 0) {
-            paras[2].textContent = "Please enter exactly 13 numbers!";
-            paras[2].style.display = "block";
-        }
-        else if (cnic.value.length > 13) {
-            paras[2].textContent = "Please enter exactly 13 numbers!";
-            paras[2].style.display = "block";
-        }
-        else if (cnic.value === "") {
+        if (email.value === "") {
             paras[2].style.display = "block";
         }
         else {
@@ -124,21 +96,38 @@ function submitbtn(event) {
 
 
 
-    var array = [];
-    
+
     if (userName.value === "") {
         return;
     } else if (dob.value === "") {
         return;
-    } else if ((cnic.length < 13 && cnic.length > 0) || cnic.length > 13 || cnic.value === "") {
+    } else if (email.value === "") {
         return;
     } else if (password.value === "" || (password.length < 6 && password.length > 0)) {
         return;
     } else {
-        
-        const users = { "Name": userName.value.trim(), "Date Of Birth": dob.value.trim(), "CNIC": cnic.value.trim(), "Password": password.value.trim() };
-        array.push(users);
-        localStorage.setItem("Users", JSON.stringify(array));
+
+        let users = localStorage.getItem("userData") || [];
+        console.log(users)
+
+
+        var storage = users.length > 0 ? JSON.parse(users) : [];
+        console.log(storage)
+
+        const emailCheck = storage.find((element) => element.Email === email.value);
+        console.log(emailCheck, "check")
+        if (emailCheck) {
+            paras[2].style.display = "block";
+            paras[2].textContent = "Email already exists!"
+            return;
+        }
+        let newUser = { "Name": userName.value.trim(), "Date Of Birth": dob.value.trim(), "Email": email.value.trim(), "Password": password.value.trim(), "Todos": []};
+        storage.push(newUser);
+        localStorage.setItem("userData", JSON.stringify(storage));
+        userName.value = "";
+        dob.value = "";
+        email.value = "";
+        password.value = "";
 
         alert("You have successfully registered!");
         loginPage.style.display = "block";
@@ -150,47 +139,26 @@ function submitbtn(event) {
 
 };
 
-var logincnic = document.getElementById("login-cnic-div");
-var loginCnicError = document.createElement("p");
-loginCnicError.textContent = "CNIC is required!"
-logincnic.appendChild(loginCnicError);
+var loginEmail = document.getElementById("login-email-div");
 
 var loginpass = document.getElementById("login-pass-div");
-var loginPassError = document.createElement("p");
-loginPassError.textContent = "Password is required!"
-loginpass.appendChild(loginPassError);
 
-var loginCnicInp = document.getElementById("login-cnic");
+var loginEmailInp = document.getElementById("login-email");
 var loginPassInp = document.getElementById("login-pass");
 
-function loginBtn() {
+function loginBtn(event) {
+event.preventDefault();
 
-    if (loginCnicInp.value.length < 13 && loginCnicInp.value.length > 0) {
-        paras[5].style.display = "block";
-        paras[5].textContent = "Please enter exactly 13 numbers!";
-
-    }
-    else if (loginCnicInp.value.length > 13) {
-        paras[5].textContent = "Please enter exactly 13 numbers!";
-        paras[5].style.display = "block";
-    } else if (loginCnicInp.value === "") {
+    if (loginEmailInp.value === "") {
         paras[5].style.display = "block";
     }
     else {
         paras[5].style.display = "none";
     }
 
-    loginCnicInp.addEventListener('input', function () {
+    loginEmailInp.addEventListener('input', function () {
 
-        if (loginCnicInp.value.length < 13 && loginCnicInp.value.length > 0) {
-            paras[5].textContent = "Please enter exactly 13 numbers!";
-            paras[5].style.display = "block";
-        }
-        else if (loginCnicInp.value.length > 13) {
-            paras[5].textContent = "Please enter exactly 13 numbers!";
-            paras[5].style.display = "block";
-        }
-        else if (loginCnicInp.value === "") {
+        if (loginEmailInp.value === "") {
             paras[5].style.display = "block";
         }
         else {
@@ -218,10 +186,61 @@ function loginBtn() {
 
     });
 
+
+    if (loginEmailInp.value === "") {
+        return;
+    } else if (loginPassInp.value === "") {
+        return;
+    } else {
+        
+        let users = localStorage.getItem("userData") || [];
+        console.log(users, "users")
+        let storage = users.length > 0 ? JSON.parse(users) : [];
+        console.log(storage)
+        let loginEmailCheck = storage.find((element) => element.Email === loginEmailInp.value);
+        console.log(loginEmailCheck, "login")
+        let loginUser = [];
+        loginUser.push(loginEmailCheck);
+
+        console.log(loginUser, "loginuser")
+       /* let parse = JSON.parse(loginUser);
+        let userData = localStorage.setItem("Login User", JSON.stringify(parse));*/
+
+        console.log(loginEmailCheck, "emailcheck")
+        if (!loginEmailCheck) {
+
+            paras[5].style.display = "block";
+            paras[5].textContent = "Email does not exists!";
+        }
+        
+
+       else if(loginEmailCheck) {
+        
+        const loginPassCheck = loginUser.find((element) => element.Password === loginPassInp.value);
+        console.log(loginPassCheck, "passcheck")
+        if (!loginPassCheck) {
+            paras[6].style.display = "block";
+            paras[6].textContent = "Password is Incorrect!";
+        }
+    }
+
+if(loginUser.length >= 1){ 
+    let userStorage = localStorage.setItem("Login User", JSON.stringify(loginUser))
+};
+ loginEmailInp.value = "";
+        loginPassInp.value = "";
+
+}
+window.location.href = 'todo.html';
+
 }
 
 
+loginPage.style.display = "block";
+   signupPage.style.display = "none";
+
 function pageToggle() {
+    
 
     if (loginPage.style.display === "none") {
         loginPage.style.display = "block";

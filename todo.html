@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+<nav>
+        <h4>All your goals, one clean space.</h4>
+        <div class="menu-icon">
+<button id="btn" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+<div class="main-div">
+    <div id="container">
+        <div class="txt">
+            <h1>To-do List</h1>
+        </div>
+        <div class="inputs">
+            <input type="text" id="taskinp" placeholder="What have you planned today?">
+            <button class="Add-btn" onclick="addTask();"> + </button>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="todo.js"></script>
+
+</html>

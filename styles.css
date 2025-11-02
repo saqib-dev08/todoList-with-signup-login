@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  
+    background-color: #122620;
+}
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    font-size: 22px;
+    font-family :'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: #808086;
+    padding: 0px 97px 0px 61px;
+    position: relative;
+    height: 70px;
+    position: sticky;
+    top: 0px;
+}
+.main-div{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 89vh;
+    width: 100%;
+}
+#container {
+    border-radius: 10px;
+    padding: 26px 0px 37px 0px;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    align-self: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.208);
+    color: white;
+    border-top: 1px solid rgb(200 195 195 / 52%);
+    border-left: 1px solid rgb(200 195 195 / 52%);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.99);
+    width: 31%;
+}
+
+#taskinp {
+    width: 261px;
+    padding: 14px 21px 14px 17px;
+    border-radius: 8px 0px 0px 8px;
+    border: transparent;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.99);
+    
+}
+#btn{
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+background-color: rgb(28, 93, 186);
+padding: 10px 20px 10px 20px;
+color: white;
+
+}
+
+#btn:hover{
+    cursor: pointer;
+  background-color: rgb(32, 105, 207);
+
+}
+#taskinp:focus {
+    outline: none;
+    background-color: rgb(218, 239, 220);
+    
+}
+
+.inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+margin-top: 20px;   
+}
+
+.Add-btn {
+    padding: 0px 10px 0px 10px;
+    font-size: 36px;
+    font-weight: 500;
+    border-radius: 0px 8px 8px 0px;
+    border: transparent;
+    background-color: #38a838;
+    color: white;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.99);
+
+}
+
+.Add-btn:hover {
+    background-color: #339c33;
+    cursor: pointer;
+
+
+}
+
+h1 {
+    font-size: 39px;
+    font-family: sans-serif;
+    color: #f4ebd0;
+}
+
+
+.tasks-div {
+    width: 77%;
+    margin: 19px 20px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 10px 21px 10px 10px;
+    border-radius: 5px;
+    border: transparent;
+    font-size: 15px;
+
+}
+
+.tasks-div:hover {
+    background-color: rgb(218, 239, 220);
+}
+
+.div1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    gap: 7px;
+}
+
+.fa-trash,
+.fa-pen-to-square {
+    font-size: 16px;
+}
+
+.fa-trash {
+    color: rgba(255, 0, 0, 0.784);
+}
+
+.fa-trash:hover {
+    transition: 0.3s ease;
+    transform: scale(120%);
+    cursor: pointer;
+
+}
+
+.fa-pen-to-square:hover {
+    transition: 0.3s ease;
+    transform: scale(120%);
+    cursor: pointer;
+}
+
+.newinput {
+    border: 1px solid grey;
+    padding: 4px 35px 4px 8px;
+    border-radius: 3px;
+}
+
+.newinput:focus {
+    background-color: rgb(218, 239, 220);
+
+}
+
+.savebtn {
+    font-size: 13px;
+    margin: 0px;
+    font-weight: 500;
+    padding-right: 5px
+}
+
+.savebtn:hover {
+    color: green;
+    cursor: pointer;
+    transition: 0.2s ease;
+    transform: scale(107%);
+}
+
+
+@media (max-width : 1024px) {
+    #container {
+        width: 42%;
+    }
+}
+
+@media (max-width : 768px) {
+    #container {
+        width: 56%;
+    }
+}
+
+@media (max-width : 425px) {
+    #container {
+        width: 100%;
+    }
+}
+
+@media (max-width : 375px) {
+    #container {
+        width: 100%;
+    }
+
+    #taskinp {
+        width: 220px;
+    }
+
+    .newinput {
+        padding: 4px 2px 4px 8px;
+        width: 173px;
+    }
+}
+
+@media (max-width : 320px) {
+    #container {
+        width: 100%;
+    }
+
+    #taskinp {
+        width: 174px;
+        font-size: 11px;
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 33px;
+    }
+
+    .newinput {
+        padding: 4px 2px 4px 8px;
+        width: 143px;
+    }
+}

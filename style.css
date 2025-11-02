@@ -1,29 +1,52 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(Images/download\ \(3\).png);
+    
+   /*background-image: url(Images/download\ \(3\).png);*/
+   background-color: #122620;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    font-size: 22px;
+    font-family :'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(255, 255, 255)      ;
+    background-color: #808086;
+    padding: 0px 97px 0px 61px;
+    position: relative;
+    height: 70px;
+    position: sticky;
+    top: 0px;
+}
+.menu-icon {
+    display: none;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 89vh;
+    width: 100%;
+}
 .main-div{
-    width: 326px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 323px;
     color: white;
     border: 1px solid rgb(63, 61, 61);
     border-radius: 25px;
-    padding: 25px;
+    padding: 29px 12px 24px 12px;
     display: flex;
+     justify-self: center;
+     justify-content: center;
+    align-self: center;
+    align-items: center;
     flex-direction: column;
-    justify-content: left;
-    align-items: left;
     background-color: rgba(0, 0, 0, 0.26);
     backdrop-filter: blur(4px);
 box-shadow: inset 0px 0px 11px -2px rgb(0, 0, 0);
@@ -31,14 +54,19 @@ box-shadow: inset 0px 0px 11px -2px rgb(0, 0, 0);
 }
 .inputs{
     display: flex;
-    width: 94%;
+     justify-content: center;
+    align-items: center;
+    width: 91%;
     color: white;
     font-size: 17px;
 margin: 7px 0px 7px 0px;
 padding: 7px 7px 7px 15px;
-border-radius: 6px;
+border-radius: 20px;
 border: none;
 background-color: rgba(255, 255, 255, 0.284);
+}
+label{
+    margin-left: 8px;
 }
 h3{
     text-align: center;
@@ -49,10 +77,10 @@ h3:hover{
     cursor: pointer;
 }
 .Btn{
-    width: 100%;
+    width: 280px;
     margin-top: 20px;
     padding: 9px;
-border-radius: 6px;
+border-radius: 20px;
 border: transparent;
 color: white;
 font-size: 15px;
@@ -64,38 +92,48 @@ background-color: rgb(32, 105, 207);
 
 }
 .inputs:focus{
-background-color: rgba(255, 255, 255, 0.46);
+background-color: rgb(232,240,254);
+color: black;
 
 outline: none;
 
 }
-#signup-content>p{
+.para{
      text-align: center;
     font-size: 14px;
-    margin-top: 10px;
+    margin-top: 15px;
     display: block;
 }
 #signup-content>p>a{
     color: rgb(202, 202, 202);
+    text-decoration: none;
 }
-#login-content>p{
-    text-align: center;
-    font-size: 14px;
-    margin-top: 10px;
-    display: block;
+#signup-content>p>a:hover{
+    color: rgb(0, 182, 254);
+
 }
 #login-content>p>a{
-     color: rgb(202, 202, 202);
+    color: rgb(202, 202, 202);
+    text-decoration: none;
+}
+#login-content>p>a:hover{
+    color: rgb(0, 182, 254);
+
+
 }
 
-p{
+
+.errorTxt{
     margin-bottom: 5px;
     transform: translateY(-3px);
     text-align: center;
     display: none;
     color: #ff3535;
 }
+/*#signup-content{
+    display: block;
+}
 #login-content{
     display: none;
 }
-
+*/
