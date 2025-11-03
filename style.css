@@ -5,7 +5,7 @@
 body{
     
    /*background-image: url(Images/download\ \(3\).png);*/
-   background-color: #122620;
+   background-color:rgb(13,17,23);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -17,10 +17,10 @@ nav {
     font-size: 22px;
     font-family :'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(255, 255, 255)      ;
-    background-color: #808086;
+    background-color:rgb(19 29 44);
+    border-bottom: 1px solid #808086a8;
     padding: 0px 97px 0px 61px;
-    position: relative;
-    height: 70px;
+    height: 79px;
     position: sticky;
     top: 0px;
 }
@@ -47,9 +47,12 @@ nav {
     align-self: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.26);
-    backdrop-filter: blur(4px);
-box-shadow: inset 0px 0px 11px -2px rgb(0, 0, 0);
+    background-color:  rgb(255 255 255 / 12%);
+    backdrop-filter: blur(5px);
+box-shadow: 2px 2px 8px 2px black;
+transition: 2s ease;
+position: relative;
+
 
 }
 .inputs{
@@ -63,15 +66,18 @@ margin: 7px 0px 7px 0px;
 padding: 7px 7px 7px 15px;
 border-radius: 20px;
 border: none;
-background-color: rgba(255, 255, 255, 0.284);
+    background-color: rgb(255 252 252 / 43%);
+    box-shadow: 2px 2px 12px -3px black;
 }
 label{
     margin-left: 8px;
 }
 h3{
     text-align: center;
-    margin: 5px 0px 15px 0px;
+    margin: 5px 0px 20px 0px;
     font-size: 25px;
+    border-bottom: 1px solid  #808086a8;
+    padding-bottom: 16px;
 }
 h3:hover{
     cursor: pointer;
@@ -85,6 +91,7 @@ border: transparent;
 color: white;
 font-size: 15px;
 background-color: rgb(28, 93, 186);
+box-shadow: 2px 2px 15px -3px black;
 }
 .Btn:hover{
     cursor: pointer;
@@ -103,21 +110,26 @@ outline: none;
     font-size: 14px;
     margin-top: 15px;
     display: block;
+    color:#ccc8c8;
 }
 #signup-content>p>a{
-    color: rgb(202, 202, 202);
+    color:rgb(32,129,248);
+
     text-decoration: none;
 }
 #signup-content>p>a:hover{
-    color: rgb(0, 182, 254);
+    text-decoration: underline;
 
 }
 #login-content>p>a{
-    color: rgb(202, 202, 202);
+    color:rgb(32,129,248);
+
     text-decoration: none;
+
 }
 #login-content>p>a:hover{
-    color: rgb(0, 182, 254);
+    
+    text-decoration: underline;
 
 
 }
@@ -130,10 +142,11 @@ outline: none;
     display: none;
     color: #ff3535;
 }
-/*#signup-content{
-    display: block;
+#signup-content{
+transition: 2s ease;
 }
 #login-content{
-    display: none;
+transition: 2s ease;
+
 }
-*/
+

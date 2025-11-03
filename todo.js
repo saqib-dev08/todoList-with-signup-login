@@ -94,9 +94,10 @@ console.log(todos, "todo2")
     taskInp.value = "";
     
     
-}
+};
 
 function logout(){
-    window.replace('index.html');
+
+    window.location.replace('index.html');
 }
 

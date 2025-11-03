@@ -129,7 +129,7 @@ function submitbtn(event) {
         email.value = "";
         password.value = "";
 
-        alert("You have successfully registered!");
+        alert("You have successfully registered! Now please login");
         loginPage.style.display = "block";
         signupPage.style.display = "none";
 
@@ -227,12 +227,12 @@ event.preventDefault();
 if(loginUser.length >= 1){ 
     let userStorage = localStorage.setItem("Login User", JSON.stringify(loginUser))
 };
+alert('Welcome ' + loginEmailCheck.Name + '!')
  loginEmailInp.value = "";
         loginPassInp.value = "";
 
 }
 window.location.href = 'todo.html';
-
 }
 
 
