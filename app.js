@@ -245,9 +245,15 @@ function pageToggle() {
     if (loginPage.style.display === "none") {
         loginPage.style.display = "block";
         signupPage.style.display = "none";
+          userName.value = "";
+        dob.value = "";
+        email.value = "";
+        password.value = "";
     } else {
         loginPage.style.display = "none";
-        signupPage.style.display = "block";
+        signupPage.style.display = "block"; 
+         loginEmailInp.value = "";
+        loginPassInp.value = "";
     }
 
 };

@@ -86,10 +86,18 @@ function addTask() {
 
     let loginUser = JSON.parse(localStorage.getItem('Login User'));
     console.log(loginUser, "user")
+    console.log(loginUser.Todos, "user1")
+
     let todos = loginUser.find((element) => element.Todos);
+let todoCheck = todos.Todos > 0 ? JSON.parse(todos.Todos) : 
+
     console.log(todos, "todo")
+    console.log(todos.Todos, "todo")
+
 todos.Todos.push(taskInp.value);
 console.log(todos, "todo2")    
+
+localStorage.setItem('Login User', JSON.stringify(todos));
 
     taskInp.value = "";
     

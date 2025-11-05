@@ -5,7 +5,8 @@
 
 body {
   
-    background-color: #122620;
+   background-color:rgb(13,17,23);
+
 }
 nav {
     display: flex;
@@ -14,10 +15,10 @@ nav {
     font-size: 22px;
     font-family :'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(255, 255, 255);
-    background-color: #808086;
+    background-color: rgb(19 29 44);
     padding: 0px 97px 0px 61px;
-    position: relative;
-    height: 70px;
+    border-bottom: 1px solid #808086a8;
+    height: 79px;
     position: sticky;
     top: 0px;
 }
@@ -26,7 +27,7 @@ nav {
       display: flex;
     justify-content: center;
     align-items: center;
-    height: 89vh;
+    height: 100vh;
     width: 100%;
 }
 #container {
@@ -38,7 +39,8 @@ nav {
     align-items: center;
     align-self: center;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.208);
+    background-color:  rgb(255 255 255 / 12%);
+
     color: white;
     border-top: 1px solid rgb(200 195 195 / 52%);
     border-left: 1px solid rgb(200 195 195 / 52%);
@@ -106,6 +108,16 @@ h1 {
     font-size: 39px;
     font-family: sans-serif;
     color: #f4ebd0;
+     border-bottom: 1px solid  #808086a8;
+    padding-bottom: 16px;
+    width: 100%;
+    display: inline-block;
+}
+.txt{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
 }
 
 
