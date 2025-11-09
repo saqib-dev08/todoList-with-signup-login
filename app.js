@@ -121,7 +121,7 @@ function submitbtn(event) {
             paras[2].textContent = "Email already exists!"
             return;
         }
-        let newUser = { "Name": userName.value.trim(), "Date Of Birth": dob.value.trim(), "Email": email.value.trim(), "Password": password.value.trim(), "Todos": []};
+        let newUser = { "Name": userName.value.trim(), "Date Of Birth": dob.value.trim(), "Email": email.value.trim(), "Password": password.value.trim(), "Todos": ""};
         storage.push(newUser);
         localStorage.setItem("userData", JSON.stringify(storage));
         userName.value = "";

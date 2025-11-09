@@ -1,11 +1,26 @@
 function addTask() {
     const taskInp = document.getElementById("taskinp");
     let input = taskInp.value.trim();
-
+    
     if (input === "") {
         return;
     }
+    
+    
+        let loginUser = JSON.parse(localStorage.getItem('Login User'));
+        console.log(loginUser, "user")
+        let userFind = loginUser.find((ele) => ele.Email);
+        console.log(userFind, "2")
+        let todo = userFind.Todos.length > 0 ? userFind.Todos : [];
+        console.log(todo, "find")
+        todo.push(input);
+        console.log(todo, "find2")
+        console.log(userFind.Todos , "todo")
+/*userFind.Todos = todo;*/
 
+    
+        /*let todoCheck = loginUser.Todos.length > 0 ? JSON.parse(loginUser) : */
+        
     
     const container = document.getElementById("container");
     
@@ -83,21 +98,11 @@ function addTask() {
             taskColor = true;
         }
     });
-
-    let loginUser = JSON.parse(localStorage.getItem('Login User'));
-    console.log(loginUser, "user")
-    console.log(loginUser.Todos, "user1")
-
-    let todos = loginUser.find((element) => element.Todos);
-let todoCheck = todos.Todos > 0 ? JSON.parse(todos.Todos) : 
-
-    console.log(todos, "todo")
-    console.log(todos.Todos, "todo")
-
-todos.Todos.push(taskInp.value);
+    
+/*todos.Todos.push(taskInp.value);
 console.log(todos, "todo2")    
 
-localStorage.setItem('Login User', JSON.stringify(todos));
+localStorage.setItem('Login User', JSON.stringify(todos));*/
 
     taskInp.value = "";
     
